@@ -6,7 +6,7 @@ sideways compatibility. Strong typing. Class Structures.
 
 OK, so what's the catch?
 
-You write your own migrations in a DSL. I know, I know. But you know
+You write your own migrations. I know, I know. But you know
 why and you know it's the right way to do it. Also one class/struct
 per file. Because I said so.
 
