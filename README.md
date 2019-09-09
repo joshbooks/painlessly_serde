@@ -8,7 +8,7 @@ OK, so what's the catch?
 
 You write your own migrations in a DSL. I know, I know. But you know
 why and you know it's the right way to do it. Also one class/struct
-per file. Because I said so. No nesting classes. No.
+per file. Because I said so.
 
 How do you handle versioning?
 
