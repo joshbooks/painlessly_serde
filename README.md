@@ -1,3 +1,5 @@
+[![Build Status](https://semaphoreci.com/api/v1/joshbooks/painlessly_serde/branches/master/badge.svg)](https://semaphoreci.com/joshbooks/painlessly_serde)
+
 The idea of this package is to provide (you guessed it) painless serde.
 What do I mean by that?
 
