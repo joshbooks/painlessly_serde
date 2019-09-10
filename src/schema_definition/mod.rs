@@ -1,20 +1,25 @@
 use semver::Version;
+use serde::{Serialize, Deserialize};
 
-struct PainlessSchema {
+#[derive(Serialize, Deserialize, Debug)]
+pub struct PainlessSchema {
     painless_schema_version: Version,
     painless_structs: Box<[PainlessStruct]>
 }
 
-struct PainlessStruct {
+#[derive(Serialize, Deserialize, Debug)]
+pub struct PainlessStruct {
     variables: Box<[PainlessVariable]>
 }
 
-struct PainlessVariable {
+#[derive(Serialize, Deserialize, Debug)]
+pub struct PainlessVariable {
     name: String,
     painless_type: PainlessType
 }
 
-enum PainlessType {
+#[derive(Serialize, Deserialize, Debug)]
+pub enum PainlessType {
     PainlessString,
     PainlessInteger { sign: bool, width: IntWidth },
     PainlessBoolean,
@@ -23,7 +28,8 @@ enum PainlessType {
     PainlessObject // a PainlessObject is just like a PainlessMap, but without the type constraints
 }
 
-enum IntWidth {
+#[derive(Serialize, Deserialize, Debug)]
+pub enum IntWidth {
     Eight,
     Sixteen,
     ThirtyTwo,
