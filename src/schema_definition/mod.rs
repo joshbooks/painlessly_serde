@@ -9,23 +9,23 @@ pub struct PainlessSchema {
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct PainlessStruct {
-    variables: Box<[PainlessVariable]>
+    pub variables: Box<[PainlessVariable]>
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct PainlessVariable {
-    name: String,
-    painless_type: PainlessType
+    pub name: String,
+    pub painless: PainlessValue
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-pub enum PainlessType {
-    PainlessString,
-    PainlessInteger { sign: bool, width: IntWidth },
-    PainlessBoolean,
-    PainlessList { elem_type: Box<PainlessType>, size: u32 },
-    PainlessMap { key_type: Box<PainlessType>, value_type: Box<PainlessType> },
-    PainlessObject // a PainlessObject is just like a PainlessMap, but without the type constraints
+pub enum PainlessValue {
+    PainlessString { string_value: Box<str> },
+    PainlessInteger { sign: bool, width: IntWidth, int_value: u64 },
+    PainlessBoolean { bool_value: bool },
+    PainlessList { elem_type: Box<PainlessValue>, size: u32, list_value: Box<[PainlessValue]> },
+    PainlessMap { keyValueList: Box<[(Box<str>, PainlessValue)]> },
+    PainlessObject {fields: Box<[PainlessVariable]>} // a PainlessObject is just like a PainlessMap, but without the type constraints
 }
 
 #[derive(Serialize, Deserialize, Debug)]
