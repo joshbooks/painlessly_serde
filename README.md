@@ -4,7 +4,8 @@ The idea of this package is to provide (you guessed it) painless serde.
 What do I mean by that?
 
 A serialization framework that provides backwards, forwards, and
-sideways compatibility. Strong typing. Class Structures.
+sideways compatibility. Strong typing. Class Structures. Compilation 
+to and transpilation between OpenAPI, gRPC, and Thrift.
 
 OK, so what's the catch?
 
