@@ -1,8 +1,11 @@
+#[macro_use]
+extern crate log;
+
 mod schema_definition;
+mod data_location;
 
 #[cfg(test)]
 mod tests {
-
     use crate::schema_definition::IntWidth;
     use crate::schema_definition::PainlessValue;
     use crate::schema_definition::PainlessVariable;
